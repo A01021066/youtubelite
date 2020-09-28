@@ -13,7 +13,6 @@ class App extends React.Component {
     }
 
     onTermSubmit = async (text) =>{
-        console.log(text)
         const list = await youtube.get('/search', {params: {q: text}})
         this.setState({
             videoList : list.data.items,
@@ -28,12 +27,11 @@ class App extends React.Component {
             selectedVideo: video,
         })
         window.scrollTo(0, 0)
-        console.log('From the app!', this.state.selectedVideo);
 
     }
 
     componentDidMount (){
-        this.onTermSubmit('popular')
+        this.onTermSubmit('Windy Chen')
     }
 
 
